@@ -95,6 +95,8 @@ def main():
         test_data = pd.read_csv('./data/raw/test.csv')
         logger.debug('Data loaded successfully')
 
+        
+
         # Preprocess the data
         train_processed_data = normalize_text(train_data)
         test_processed_data = normalize_text(test_data)

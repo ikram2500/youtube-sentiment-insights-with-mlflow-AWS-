@@ -29,11 +29,40 @@ stages:
       size: 5571089
     - path: src/data/data_preprocessing.py
       hash: md5
-      md5: 7c23b0f26d39ac8bf110a94385e399dd
-      size: 3790
+      md5: 6e5da04660b0162c1c9f8c594e77f51c
+      size: 3802
     outs:
     - path: data/interim
       hash: md5
       md5: ba42408e7bd1e85685474d6a349ae57e.dir
       size: 5134850
       nfiles: 2
+  model_building:
+    cmd: python src/model/model_building.py
+    deps:
+    - path: data/interim/train_processed.csv
+      hash: md5
+      md5: 35027dfda8274bd9356544f2ff358aa4
+      size: 4134324
+    - path: src/model/model_building.py
+      hash: md5
+      md5: 9964f7cf9eeedb6754df508f60c65f7e
+      size: 5894
+    params:
+      params.yaml:
+        model_building.learning_rate: 0.09
+        model_building.max_depth: 20
+        model_building.max_features: 1000
+        model_building.n_estimators: 367
+        model_building.ngram_range:
+        - 1
+        - 3
+    outs:
+    - path: lgbm_model.pkl
+      hash: md5
+      md5: 277926537b4806cf25611ce7f96597ef
+      size: 3904333
+    - path: tfidf_vectorizer.pkl
+      hash: md5
+      md5: 3c9d0c34fb5277d105c747a26f328ebd
+      size: 36874
