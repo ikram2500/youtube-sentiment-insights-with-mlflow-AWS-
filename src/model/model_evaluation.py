@@ -14,6 +14,8 @@ import json
 from mlflow.models import infer_signature
 from scipy.sparse import issparse
 
+
+
 # logging configuration 
 logger = logging.getLogger("model_evaluation")
 logger.setLevel('DEBUG')
@@ -129,7 +131,7 @@ def save_model_info(run_id: str, model_path:str, file_path: str) -> None:
 
 
 def main():
-    mlflow.set_tracking_uri("http://ec2-54-91-181-71.compute-1.amazoneaws.com:5000/")
+    mlflow.set_tracking_uri("https://github.com/ikram2500/youtube-sentiment-insights-with-mlflow-AWS-.git")
 
     mlflow.set_experiment('dvc-pipeline-runs')
 

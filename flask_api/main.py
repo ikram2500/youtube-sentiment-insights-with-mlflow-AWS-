@@ -15,7 +15,8 @@ from nltk.stem import WordNetLemmatizer
 from mlflow.tracking import MlflowClient 
 import matplotlib.dates as mdates 
 import pickle 
- 
+
+
 
 app = Flask(__name__)
 CORS(app)
@@ -52,11 +53,12 @@ def preprocess_comment(comment):
 
 
 
-# load the model and vectorizer from the model registery and local storage
+# #load the model and vectorizer from the model registery and local storage
 # def load_model_and_vectorizer(model_name, model_version, vectorizer_path):
 #     # Set MLFLOW tracking URI to your server
-#     mlflow.set_tracking_uri("tracking server path")
-#     client = MlflowClient()
+#     path = mlflow.set_tracking_uri("https://dagshub.com/ikram2500/youtube-sentiment-insights-with-mlflow-AWS-.mlflow")
+#     #dagshub.init(repo_owner='ikram2500', repo_name='youtube-sentiment-insights-with-mlflow-AWS-', mlflow=True)
+#     client = MlflowClient(path)
 #     model_uri = f"models:/{model_name}/{model_version}"
 #     model = mlflow.pyfunc.load_model(model_uri)
 #     with open(vectorizer_path, 'rb') as file:
@@ -66,8 +68,8 @@ def preprocess_comment(comment):
 
 
 
-# Initialize the model and vectorizer
-# model , vectorizer = load_model_and_vectorizer("yt_chrome_plugin_model", "1", "./tfidf_vectorize.pkl")  # Update paths and vesions as needed
+# #Initialize the model and vectorizer
+# model , vectorizer = load_model_and_vectorizer("./lgbm_model.pkl", "1", "./tfidf_vectorize.pkl")  # Update paths and vesions as needed
 def load_model(model_path, vectorizer_path):
     """Load the trained model."""
 

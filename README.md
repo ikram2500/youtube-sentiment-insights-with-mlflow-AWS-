@@ -1,4 +1,5 @@
-# youtube-sentiment-insights-with-mlflow-AWS-
+# youtube-sentiment-insights-with-mlflow-AWS- 
+https://www.youtube.com/watch?v=gwNPV882tkc
 This project is implements mlflow , DVC and AWS to complete the youTube  videos comments sentiment analysis. Also build a chrome extention with the help of flask.
 
 
